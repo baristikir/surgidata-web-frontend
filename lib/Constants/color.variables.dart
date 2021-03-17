@@ -6,6 +6,10 @@ const $black = Color(0xFF000000);
 const $gray_1 = Color(0xFFEEEEEE);
 const $gray_2 = Color(0xFFBEBEBE);
 
+// Background Colors
+const $primaryLightBG = Color(0xFFFFFFFF);
+const $primaryDarkBG = Color(0xFF181818);
+
 // Primary Colors
 const $primaryTealColor = Color(0xFF00a789);
 const $primaryRoyalColor = Color(0xFF00435E);

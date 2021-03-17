@@ -2,10 +2,16 @@ import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:surgidata_frontend/Constants/color.variables.dart';
-import 'package:surgidata_frontend/Screens/Home/home_screen.dart';
-import 'package:surgidata_frontend/style.dart';
+import 'package:surgidata_frontend/Core/Manager/theme_manager.dart';
+import 'package:surgidata_frontend/Pages/home_screen.dart';
 
-void main() => runApp(WebApp());
+void main() {
+  return runApp(WebApp());
+  // return runApp(ChangeNotifierProvider<ThemeNotifier>(
+  //   create: (_) => new ThemeNotifier(),
+  //   child: WebApp(),
+  // ));
+}
 
 // *==================================================*
 // *                App Routings                      *
@@ -13,21 +19,83 @@ void main() => runApp(WebApp());
 class WebApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Website | Surgi-Data ",
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        textTheme: TextTheme(
-          headline6: TitleTextStyle,
-          bodyText2: Body1TextStyle),
-        primaryColor: $black,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: HomeScreen(),
-      routes: {
-        "/login": (context) => SignUpScreen(),
-        "/preview": (context) => WelcomeScreen()
+    return ThemeManager(
+      defaultBrightness: Brightness.light,
+      loadBrightnessOnStart: true,
+      data: (brightness) {
+        return brightness == Brightness.light
+            ? ThemeData(
+                primarySwatch: Colors.blueGrey,
+                backgroundColor: $primaryLightBG,
+                cardColor: Colors.blueGrey[50],
+                 appBarTheme: AppBarTheme(
+                  backgroundColor: Colors.white,
+                ),
+                primaryTextTheme: TextTheme(
+                  headline6: TextStyle(
+                    color: Colors.black,
+                  ),
+                  button: TextStyle(
+                    color: Colors.blueGrey,
+                    decorationColor: Colors.blueGrey[300],
+                  ),
+                  subtitle2: TextStyle(
+                    color: Colors.blueGrey[900],
+                  ),
+                  subtitle1: TextStyle(
+                    color: Colors.black,
+                  ),
+                  headline1: TextStyle(color: Colors.blueGrey[800]),
+                  bodyText1: TextStyle(color: Colors.black),
+                  bodyText2: TextStyle(color: Colors.black87),
+                ),
+                bottomAppBarColor: Colors.blueGrey[900],
+                iconTheme: IconThemeData(color: Colors.blueGrey),
+                brightness: brightness,
+              )
+            : ThemeData(
+                primarySwatch: Colors.blueGrey,
+                backgroundColor: $primaryDarkBG,
+                cardColor: Colors.black,
+                appBarTheme: AppBarTheme(
+                  backgroundColor: Color(0xFF181818),
+                ),
+                primaryTextTheme: TextTheme(
+                  headline6: TextStyle(
+                    color: Colors.white,
+                  ),
+                  button: TextStyle(
+                    color: Colors.blueGrey[200],
+                    decorationColor: Colors.blueGrey[50],
+                  ),
+                  subtitle2: TextStyle(
+                    color: Colors.white,
+                  ),
+                  subtitle1: TextStyle(
+                    color: Colors.blueGrey[300],
+                  ),
+                  headline1: TextStyle(
+                    color: Colors.white70,
+                  ),
+                  bodyText1: TextStyle(color: Colors.white),
+                  bodyText2: TextStyle(color: Colors.white70),
+                ),
+                bottomAppBarColor: Colors.black,
+                iconTheme: IconThemeData(color: Colors.blueGrey[200]),
+                brightness: brightness,
+                visualDensity: VisualDensity.adaptivePlatformDensity,
+              );
       },
+      themedWidgetBuilder: (context, data) => MaterialApp(
+        title: "Surgi Data | Plato",
+        debugShowCheckedModeBanner: false,
+        theme: data,
+        home: HomeScreen(),
+        routes: {
+          "/login": (context) => SignUpScreen(),
+          "/preview": (context) => WelcomeScreen()
+        },
+      ),
     );
   }
 }

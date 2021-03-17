@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:surgidata_frontend/Constants/color.variables.dart';
 
-class MenuItem extends StatelessWidget {
+class NavBarItem extends StatelessWidget {
   final String title;
   final Function onClick;
 
-  const MenuItem({Key key, this.title, this.onClick}) : super(key: key);
+  const NavBarItem({Key key, this.title, this.onClick}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

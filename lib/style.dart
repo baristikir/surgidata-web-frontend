@@ -12,7 +12,7 @@ const String IBM = "IBM Plex Sans";
 // *===========================================* //
 // *                 Font Sizes                * //
 // *===========================================* //
-const $DesktopTitleSize = 42.0;
+const $DesktopTitleSize = 48.0;
 const $TabletTitleSize = 32.0;
 const $MobileTitleSize = 24.0;
 
@@ -30,25 +30,51 @@ const $MobileButtonFontSize = 16.0;
 // *===========================================* //
 // *                 Styles                    * //
 // *===========================================* //
-const HeaderTextStyle = TextStyle(
+// * Header Font Styles *
+const HeaderDesktopTextStyle = TextStyle(
   fontFamily: IBM,
-  fontWeight: FontWeight.w600,
+  fontWeight: FontWeight.w500,
   fontSize: $DesktopHeaderLogo,
-  color: $black,
+);
+const HeaderMobileTextStyle = TextStyle(
+  fontFamily: IBM,
+  fontWeight: FontWeight.w500,
+  fontSize: $MobileHeaderLogo,
 );
 
-const TitleTextStyle = TextStyle(
+// * Title Font Sizes *
+const TitleDesktopTextStyle = TextStyle(
   fontFamily: Manrope,
   fontWeight: FontWeight.w600,
   fontSize: $DesktopTitleSize,
-  color: $black,
+);
+const TitleTabletTextStyle = TextStyle(
+  fontFamily: Manrope,
+  fontWeight: FontWeight.w600,
+  fontSize: $TabletTitleSize,
+);
+const TitleMobileTextStyle = TextStyle(
+  fontFamily: Manrope,
+  fontWeight: FontWeight.w600,
+  fontSize: $MobileTitleSize,
 );
 
-const Body1TextStyle = TextStyle(
+
+// * Body Font Sizes * 
+const Body1DesktopTextStyle = TextStyle(
   fontFamily: Manrope,
   fontWeight: FontWeight.w400,
   fontSize: $DesktopTextSize,
-  color: $black,
+);
+const Body1TabletTextStyle = TextStyle(
+  fontFamily: Manrope,
+  fontWeight: FontWeight.w400,
+  fontSize: $TabletTextSize,
+);
+const Body1MobileTextStyle = TextStyle(
+  fontFamily: Manrope,
+  fontWeight: FontWeight.w400,
+  fontSize: $MobileTextSize,
 );
 
 const ButtonTextStyle = TextStyle(
