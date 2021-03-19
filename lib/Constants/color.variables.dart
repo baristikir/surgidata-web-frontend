@@ -26,6 +26,9 @@ const $primaryTealHoverColor = 'hsla(169, 100%, 25%, 1)';
 const $primaryOrangeHoverColor = Color.fromRGBO(195, 126, 29, 1.0);
 const $primaryRoyalHoverColor = 'hsla(197, 100%, 9%, 1)';
 
+const $lightFooterBG = Color(0xFF00435E);
+const $darkFooterBG = Color(0xFF173B42);
+
 // Placeholder Colors
 const $formLabelColorLight = '#0b0d17';
 const $formLabelColorDark = '#ffffff';

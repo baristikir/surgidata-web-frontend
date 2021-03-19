@@ -19,7 +19,7 @@ class SponsorsHeading extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Row(),
-          Text("Our Sponsors", style: TextStyle(
+          Text("Our Partners", style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.w600,
             fontFamily: "Manrope"
@@ -29,7 +29,7 @@ class SponsorsHeading extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("Our Sponsors",
+          Text("Our Partners",
           style: TextStyle(
             fontSize: 32,
             fontWeight: FontWeight.w600,

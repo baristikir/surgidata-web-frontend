@@ -27,7 +27,10 @@ class WebApp extends StatelessWidget {
             ? ThemeData(
                 primarySwatch: Colors.blueGrey,
                 backgroundColor: $primaryLightBG,
-                cardColor: Colors.blueGrey[50],
+                cardColor: Colors.transparent,
+                cardTheme: CardTheme(
+                  elevation: 0,
+                ),
                  appBarTheme: AppBarTheme(
                   backgroundColor: Colors.white,
                 ),
@@ -49,16 +52,19 @@ class WebApp extends StatelessWidget {
                   bodyText1: TextStyle(color: Colors.black),
                   bodyText2: TextStyle(color: Colors.black87),
                 ),
-                bottomAppBarColor: Colors.blueGrey[900],
+                bottomAppBarColor: Colors.white10,
                 iconTheme: IconThemeData(color: Colors.blueGrey),
                 brightness: brightness,
               )
             : ThemeData(
                 primarySwatch: Colors.blueGrey,
                 backgroundColor: $primaryDarkBG,
-                cardColor: Colors.black,
+                cardColor: Colors.transparent,
+                cardTheme: CardTheme(
+                  elevation: 0,
+                ),
                 appBarTheme: AppBarTheme(
-                  backgroundColor: Color(0xFF181818),
+                  backgroundColor: Colors.transparent
                 ),
                 primaryTextTheme: TextTheme(
                   headline6: TextStyle(
@@ -80,7 +86,7 @@ class WebApp extends StatelessWidget {
                   bodyText1: TextStyle(color: Colors.white),
                   bodyText2: TextStyle(color: Colors.white70),
                 ),
-                bottomAppBarColor: Colors.black,
+                bottomAppBarColor: $darkFooterBG,
                 iconTheme: IconThemeData(color: Colors.blueGrey[200]),
                 brightness: brightness,
                 visualDensity: VisualDensity.adaptivePlatformDensity,

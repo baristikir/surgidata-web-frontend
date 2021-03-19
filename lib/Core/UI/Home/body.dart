@@ -1,25 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:surgidata_frontend/Components/centered_container.dart';
+import 'package:surgidata_frontend/Components/section_title.dart';
+import 'package:surgidata_frontend/Core/UI/Home/Features/features.dart';
 import 'package:surgidata_frontend/Core/UI/Home/Hero/home_hero.dart';
+import 'package:surgidata_frontend/Core/UI/Home/Sponsors/sponsors.dart';
 import 'package:surgidata_frontend/Core/UI/Home/Sponsors/sponsors_heading.dart';
+import 'package:surgidata_frontend/Core/UI/footer.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
     return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Container(
-          height: 460,
-          child: HomeHero(),
-        ),
-        Container(
-          height: 230,
-          child: SponsorsHeading(
-            screenSize: screenSize,
+        CenteredContainer(
+          child: Container(
+            height: 460,
+            child: HomeHero(),
           ),
         ),
+        Column(
+          children: [
+            Container(
+              margin: EdgeInsets.only(top: 32.0),
+              child: SectionTitle(
+                title: "Our Partners",
+              ),
+            ),
+            SponsorsSection(),
+          ],
+        ),
+        FeaturesSection(),
       ],
     );
   }
