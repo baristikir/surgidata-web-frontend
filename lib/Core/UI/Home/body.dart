@@ -3,6 +3,7 @@ import 'package:surgidata_frontend/Components/centered_container.dart';
 import 'package:surgidata_frontend/Components/section_title.dart';
 import 'package:surgidata_frontend/Core/UI/Home/Features/features.dart';
 import 'package:surgidata_frontend/Core/UI/Home/Hero/home_hero.dart';
+import 'package:surgidata_frontend/Core/UI/Home/Quality/qualities.dart';
 import 'package:surgidata_frontend/Core/UI/Home/Sponsors/sponsors.dart';
 import 'package:surgidata_frontend/Core/UI/Home/Sponsors/sponsors_heading.dart';
 import 'package:surgidata_frontend/Core/UI/footer.dart';
@@ -34,6 +35,7 @@ class HomeBody extends StatelessWidget {
           ],
         ),
         FeaturesSection(),
+        QualtiySection(),
       ],
     );
   }
